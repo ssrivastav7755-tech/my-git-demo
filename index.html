@@ -1,183 +1,714 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSA & Co. | Premium Legal Services</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-navy: #1a2942;
-            --accent-gold: #c5a059;
-            --bg-light: #f8f9fa;
-            --text-dark: #333333;
-            --text-light: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: var(--primary-navy);
-            color: var(--text-light);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--accent-gold);
-        }
-
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            font-weight: 300;
-            font-size: 1.2rem;
-            color: #d1d5db;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary-navy);
-            margin-bottom: 40px;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--accent-gold);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-gold);
-        }
-
-        .card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary-navy);
-            margin-bottom: 15px;
-        }
-
-        .card-text {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: var(--primary-navy);
-            color: var(--text-light);
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-gold);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSA Law | Premier Legal Excellence</title>
+  <meta name="description"
+    content="JSA is one of India's premier full-service law firms, offering expert legal counsel across corporate, litigation, banking, infrastructure and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-    <header>
-        <h1>JSA & Co. Legal Advocates</h1>
-        <p>Excellence, Integrity, and Devotion to the Law</p>
-    </header>
-
-    <div style="background-color: #fff; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-        <a href="index.html" style="color: #1a2942; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 1.1rem;">Home</a>
-        <a href="about.html" style="color: #1a2942; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 1.1rem;">About Us</a>
-        <a href="privacy.html" style="color: #1a2942; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 1.1rem;">Privacy Policy</a>
+  <!-- ===== PRELOADER ===== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="pl-logo">JSA</div>
+      <div class="pl-bar">
+        <div class="pl-fill" id="plFill"></div>
+      </div>
+      <div class="pl-text" id="plText">Initialising…</div>
     </div>
+  </div>
 
-    <div class="container">
-        <h2 class="section-title">Our Practice Areas</h2>
-        
-        <div class="cards-grid">
-            <!-- Card 1 -->
-            <div class="card">
-                <div class="card-icon">🏢</div>
-                <h3 class="card-title">Corporate Law</h3>
-                <p class="card-text">Expert guidance on mergers and acquisitions, corporate governance, and complex business restructuring.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
 
-            <!-- Card 2 -->
-            <div class="card">
-                <div class="card-icon">⚖️</div>
-                <h3 class="card-title">Dispute Resolution</h3>
-                <p class="card-text">Strategic representation in high-stakes commercial litigation, domestic and international arbitration.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
+  <!-- ===== SCROLL PROGRESS ===== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-            <!-- Card 3 -->
-            <div class="card">
-                <div class="card-icon">📝</div>
-                <h3 class="card-title">Intellectual Property</h3>
-                <p class="card-text">Protecting your brand’s innovations through rigorous patents, trademarks, and copyright enforcement.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">JSA</span>
+        <span class="logo-sub">LAW</span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-a">Home</a></li>
+        <li><a href="#about" class="nav-a">About</a></li>
+        <li><a href="#practice" class="nav-a">Practice Areas</a></li>
+        <li><a href="#timeline" class="nav-a">Our Journey</a></li>
+        <li><a href="#people" class="nav-a">Our People</a></li>
+        <li><a href="#insights" class="nav-a">Insights</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== AWARDS MARQUEE ===== -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <span>🏆 IFLR 1000 Top Tier Firm 2024</span>
+      <span>⭐ Chambers &amp; Partners Ranked</span>
+      <span>📌 Legal 500 Top Firm</span>
+      <span>🥇 ALB India Law Awards</span>
+      <span>🎖️ Best Law Firm — Finance Monthly</span>
+      <span>🌟 50+ Ranked Lawyers</span>
+      <span>🏛️ 12 Ranked Practice Groups</span>
+      <span>🌐 6 Offices Across India</span>
+      <span>💼 1000+ Landmark Deals</span>
+      <!-- Duplicate for seamless loop -->
+      <span>🏆 IFLR 1000 Top Tier Firm 2024</span>
+      <span>⭐ Chambers &amp; Partners Ranked</span>
+      <span>📌 Legal 500 Top Firm</span>
+      <span>🥇 ALB India Law Awards</span>
+      <span>🎖️ Best Law Firm — Finance Monthly</span>
+      <span>🌟 50+ Ranked Lawyers</span>
+      <span>🏛️ 12 Ranked Practice Groups</span>
+      <span>🌐 6 Offices Across India</span>
+      <span>💼 1000+ Landmark Deals</span>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content" data-parallax="0.3">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        IFLR 1000 · Top Tier Firm 2024
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Legal Excellence</span>
+        <span class="title-line accent" id="typingText"></span>
+      </h1>
+      <p class="hero-subtitle">
+        India's premier full-service law firm — advising corporates, financial institutions,
+        and governments across the most complex mandates since 1991.
+      </p>
+      <div class="hero-actions">
+        <a href="#practice" class="btn btn-primary magnetic">Explore Practice Areas</a>
+        <a href="#about" class="btn btn-ghost magnetic">Learn More <span class="btn-arrow">↗</span></a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num count-up" data-target="50" data-suffix="+">50+</span>
+          <span class="stat-label">Ranked Lawyers</span>
         </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num count-up" data-target="12" data-suffix="">12</span>
+          <span class="stat-label">Practice Groups</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num count-up" data-target="1000" data-suffix="+">1000+</span>
+          <span class="stat-label">Landmark Deals</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num count-up" data-target="33" data-suffix=" Yrs">33 Yrs</span>
+          <span class="stat-label">Of Excellence</span>
+        </div>
+      </div>
     </div>
+    <div class="hero-visual">
+      <div class="hero-card tilt-card floating">
+        <div class="hc-icon">⚖️</div>
+        <div class="hc-text">
+          <strong>Corporate Law</strong>
+          <span>M&amp;A · PE · Restructuring</span>
+        </div>
+        <div class="hc-glow"></div>
+      </div>
+      <div class="hero-card tilt-card floating delay-1">
+        <div class="hc-icon">🏛️</div>
+        <div class="hc-text">
+          <strong>Litigation</strong>
+          <span>Courts · Arbitration</span>
+        </div>
+        <div class="hc-glow"></div>
+      </div>
+      <div class="hero-card tilt-card floating delay-2">
+        <div class="hc-icon">💼</div>
+        <div class="hc-text">
+          <strong>Banking &amp; Finance</strong>
+          <span>Regulatory · Capital Markets</span>
+        </div>
+        <div class="hc-glow"></div>
+      </div>
+      <div class="hero-card tilt-card floating delay-3">
+        <div class="hc-icon">🌐</div>
+        <div class="hc-text">
+          <strong>Technology &amp; TMT</strong>
+          <span>Data · Telecom</span>
+        </div>
+        <div class="hc-glow"></div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <div class="section-tag">About JSA</div>
+          <h2 class="section-title">A Legacy of <em>Legal Leadership</em></h2>
+          <p class="about-desc">
+            JSA Advocates &amp; Solicitors is one of India's most respected full-service law firms,
+            with offices across India's major commercial centres. We advise clients on the full spectrum
+            of legal matters — from landmark transactions to complex litigation.
+          </p>
+          <p class="about-desc">
+            Our lawyers are consistently recognised by leading global and domestic publications,
+            reflecting our uncompromising commitment to quality, ethics, and client outcomes.
+          </p>
+          <div class="about-awards">
+            <div class="award-chip glow-chip">🏆 IFLR1000 Top Firm</div>
+            <div class="award-chip glow-chip">⭐ Chambers &amp; Partners</div>
+            <div class="award-chip glow-chip">📌 Legal 500</div>
+            <div class="award-chip glow-chip">🥇 ALB Awards</div>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <div class="about-numbers">
+            <div class="ab-num-card count-card">
+              <div class="ab-icon">🏢</div>
+              <span class="ab-num count-up" data-target="6" data-suffix="">6</span>
+              <span class="ab-label">Offices Across India</span>
+              <div class="ab-bar">
+                <div class="ab-bar-fill" style="--pct:100%"></div>
+              </div>
+            </div>
+            <div class="ab-num-card accent-card count-card">
+              <div class="ab-icon">👥</div>
+              <span class="ab-num count-up" data-target="400" data-suffix="+">400+</span>
+              <span class="ab-label">Legal Professionals</span>
+              <div class="ab-bar">
+                <div class="ab-bar-fill" style="--pct:80%"></div>
+              </div>
+            </div>
+            <div class="ab-num-card count-card">
+              <div class="ab-icon">📋</div>
+              <span class="ab-num count-up" data-target="1000" data-suffix="+">1000+</span>
+              <span class="ab-label">Landmark Deals</span>
+              <div class="ab-bar">
+                <div class="ab-bar-fill" style="--pct:90%"></div>
+              </div>
+            </div>
+            <div class="ab-num-card accent-card count-card">
+              <div class="ab-icon">⭐</div>
+              <span class="ab-num count-up" data-target="50" data-suffix="+">50+</span>
+              <span class="ab-label">Ranked Lawyers</span>
+              <div class="ab-bar">
+                <div class="ab-bar-fill" style="--pct:70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRACTICE AREAS ===== -->
+  <section class="practice" id="practice">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">What We Do</div>
+        <h2 class="section-title">Practice Areas &amp; Sectors</h2>
+        <p class="section-sub">Full-spectrum legal expertise across every critical domain of business and commerce.</p>
+      </div>
+      <div class="practice-grid">
+        <div class="practice-card tilt-card reveal" tabindex="0">
+          <div class="pc-number">01</div>
+          <div class="pc-icon">⚖️</div>
+          <h3>Corporate &amp; M&amp;A</h3>
+          <p>Structuring complex mergers, acquisitions, and corporate restructurings with precision and strategic
+            insight.</p>
+          <div class="pc-tags"><span>M&amp;A</span><span>PE</span><span>JV</span></div>
+          <a href="#contact" class="pc-link">Explore <span>→</span></a>
+          <div class="pc-shine"></div>
+        </div>
+        <div class="practice-card tilt-card reveal" tabindex="0">
+          <div class="pc-number">02</div>
+          <div class="pc-icon">🏛️</div>
+          <h3>Litigation &amp; Dispute Resolution</h3>
+          <p>Expert representation across all levels of the Indian judiciary and leading arbitral forums.</p>
+          <div class="pc-tags"><span>Courts</span><span>Arbitration</span><span>Mediation</span></div>
+          <a href="#contact" class="pc-link">Explore <span>→</span></a>
+          <div class="pc-shine"></div>
+        </div>
+        <div class="practice-card tilt-card reveal" tabindex="0">
+          <div class="pc-number">03</div>
+          <div class="pc-icon">💰</div>
+          <h3>Banking &amp; Finance</h3>
+          <p>Comprehensive advisory on lending, capital markets, structured finance, and regulatory compliance.</p>
+          <div class="pc-tags"><span>Capital Markets</span><span>Lending</span><span>Debt</span></div>
+          <a href="#contact" class="pc-link">Explore <span>→</span></a>
+          <div class="pc-shine"></div>
+        </div>
+        <div class="practice-card tilt-card reveal" tabindex="0">
+          <div class="pc-number">04</div>
+          <div class="pc-icon">🏗️</div>
+          <h3>Infrastructure &amp; Projects</h3>
+          <p>Legal guidance for major power, port, road, and urban infrastructure projects across India.</p>
+          <div class="pc-tags"><span>Power</span><span>Roads</span><span>Ports</span></div>
+          <a href="#contact" class="pc-link">Explore <span>→</span></a>
+          <div class="pc-shine"></div>
+        </div>
+        <div class="practice-card tilt-card reveal" tabindex="0">
+          <div class="pc-number">05</div>
+          <div class="pc-icon">🌐</div>
+          <h3>Technology &amp; TMT</h3>
+          <p>Navigating complex technology transactions, data privacy, and telecommunications regulatory frameworks.</p>
+          <div class="pc-tags"><span>Fintech</span><span>Privacy</span><span>Telecom</span></div>
+          <a href="#contact" class="pc-link">Explore <span>→</span></a>
+          <div class="pc-shine"></div>
+        </div>
+        <div class="practice-card tilt-card reveal" tabindex="0">
+          <div class="pc-number">06</div>
+          <div class="pc-icon">🛡️</div>
+          <h3>Regulatory &amp; Compliance</h3>
+          <p>Strategic regulatory counsel across sectors—from SEBI and RBI compliance to antitrust and competition law.
+          </p>
+          <div class="pc-tags"><span>SEBI</span><span>RBI</span><span>Competition</span></div>
+          <a href="#contact" class="pc-link">Explore <span>→</span></a>
+          <div class="pc-shine"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section class="timeline-section" id="timeline">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Journey</div>
+        <h2 class="section-title">Three Decades of <em>Excellence</em></h2>
+        <p class="section-sub">A proud legacy built on landmark achievements, unwavering ethics, and legal innovation.
+        </p>
+      </div>
+      <div class="timeline">
+        <div class="tl-line"></div>
+        <div class="tl-item left reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-year">1991</span>
+            <h4>Firm Founded</h4>
+            <p>JSA Advocates &amp; Solicitors established in New Delhi by Jyoti Sagar, with a vision to provide
+              best-in-class legal services.</p>
+          </div>
+        </div>
+        <div class="tl-item right reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-year">1998</span>
+            <h4>Mumbai Expansion</h4>
+            <p>Opened our Mumbai office to strengthen capabilities in banking, finance, and capital markets advisory.
+            </p>
+          </div>
+        </div>
+        <div class="tl-item left reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-year">2005</span>
+            <h4>First Chambers Ranking</h4>
+            <p>Ranked by Chambers &amp; Partners for the first time — the beginning of a tradition of global
+              recognition.</p>
+          </div>
+        </div>
+        <div class="tl-item right reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-year">2012</span>
+            <h4>Pan-India Presence</h4>
+            <p>Expanded to 6 offices across New Delhi, Mumbai, Bengaluru, Hyderabad, Chennai, and Kolkata.</p>
+          </div>
+        </div>
+        <div class="tl-item left reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-year">2018</span>
+            <h4>IFLR1000 Top Tier</h4>
+            <p>Consistently ranked as a Top Tier Firm by IFLR1000, with 12 practice areas and 50+ ranked lawyers.</p>
+          </div>
+        </div>
+        <div class="tl-item right reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-year">2024</span>
+            <h4>Excellence Continues</h4>
+            <p>Advising on some of India's most complex cross-border transactions, regulatory matters, and landmark
+              litigation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PEOPLE ===== -->
+  <section class="people" id="people">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Team</div>
+        <h2 class="section-title">The People Behind <em>Our Excellence</em></h2>
+        <p class="section-sub">Our lawyers are recognised thought leaders, trusted by the world's leading companies.</p>
+      </div>
+      <div class="people-grid">
+        <div class="person-card tilt-card reveal">
+          <div class="person-avatar" style="background: linear-gradient(135deg,#a1132a,#6b0c1c)"><span>SS</span></div>
+          <div class="person-info">
+            <h4>Somasekhar Sundaresan</h4>
+            <span class="person-role">Partner · Securities Law</span>
+          </div>
+          <div class="person-social">
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+        <div class="person-card tilt-card reveal">
+          <div class="person-avatar" style="background: linear-gradient(135deg,#1a1a2e,#16213e)"><span>JJ</span></div>
+          <div class="person-info">
+            <h4>Jyoti Sagar</h4>
+            <span class="person-role">Managing Partner · Founding Member</span>
+          </div>
+          <div class="person-social">
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+        <div class="person-card tilt-card reveal">
+          <div class="person-avatar" style="background: linear-gradient(135deg,#6b0c1c,#a1132a)"><span>KR</span></div>
+          <div class="person-info">
+            <h4>Karan Rakhra</h4>
+            <span class="person-role">Partner · Banking &amp; Finance</span>
+          </div>
+          <div class="person-social">
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+        <div class="person-card tilt-card reveal">
+          <div class="person-avatar" style="background: linear-gradient(135deg,#1a3a2a,#0f2a1a)"><span>NM</span></div>
+          <div class="person-info">
+            <h4>Namrata Mehta</h4>
+            <span class="person-role">Partner · Corporate &amp; M&amp;A</span>
+          </div>
+          <div class="person-social">
+            <a href="#" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+      </div>
+      <div class="people-cta reveal">
+        <a href="#contact" class="btn btn-outline">Meet Our Full Team →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSIGHTS ===== -->
+  <section class="insights" id="insights">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Knowledge Hub</div>
+        <h2 class="section-title">Insights &amp; Publications</h2>
+        <p class="section-sub">Thought leadership from our lawyers on the latest developments in law and policy.</p>
+      </div>
+      <div class="insights-grid">
+        <div class="insight-card featured tilt-card reveal">
+          <div class="ic-tag">Thought Leadership</div>
+          <h3>The Future of Fintech Regulation in India</h3>
+          <p>An in-depth analysis of the evolving regulatory landscape for fintech companies under the RBI's new
+            guidelines and the implications for digital lenders.</p>
+          <div class="ic-meta">
+            <span class="ic-author">Somasekhar Sundaresan</span>
+            <span class="ic-date">Feb 2026</span>
+          </div>
+          <a href="#contact" class="ic-link">Read Article ↗</a>
+        </div>
+        <div class="insight-card tilt-card reveal">
+          <div class="ic-tag">Deal Corner</div>
+          <h3>Advising on the Landmark XYZ Corp. Merger</h3>
+          <p>JSA acted as lead counsel in one of India's largest cross-border M&A transactions of the year.</p>
+          <div class="ic-meta">
+            <span class="ic-author">Corporate Team</span>
+            <span class="ic-date">Jan 2026</span>
+          </div>
+          <a href="#contact" class="ic-link">Read Article ↗</a>
+        </div>
+        <div class="insight-card tilt-card reveal">
+          <div class="ic-tag">Publication</div>
+          <h3>Competition Law Amendments: Key Takeaways</h3>
+          <p>A comprehensive breakdown of the Competition (Amendment) Act and its implications for businesses operating
+            in India.</p>
+          <div class="ic-meta">
+            <span class="ic-author">Regulatory Team</span>
+            <span class="ic-date">Dec 2025</span>
+          </div>
+          <a href="#contact" class="ic-link">Read Article ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials">
+    <div class="test-bg">
+      <div class="test-orb"></div>
+    </div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag light">Client Stories</div>
+        <h2 class="section-title light">What Our Clients Say</h2>
+      </div>
+      <div class="test-slider" id="testSlider">
+        <div class="test-card active">
+          <div class="test-quote-mark">"</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">JSA's team provided exceptional strategic advice on our cross-border acquisition. Their
+            deep expertise in Indian regulatory matters was invaluable throughout the entire transaction.</p>
+          <div class="test-author">
+            <div class="ta-avatar">CLO</div>
+            <div>
+              <span class="ta-name">Chief Legal Officer</span>
+              <span class="ta-company">Fortune 500 Technology Company</span>
+            </div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-quote-mark">"</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">We have relied on JSA for over a decade for our most complex banking and finance
+            matters. Their responsiveness and quality of work is consistently outstanding.</p>
+          <div class="test-author">
+            <div class="ta-avatar">HL</div>
+            <div>
+              <span class="ta-name">Head of Legal, India</span>
+              <span class="ta-company">Leading Global Investment Bank</span>
+            </div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-quote-mark">"</div>
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">JSA's litigation team achieved a landmark outcome for us at the Supreme Court. Their
+            preparation, advocacy, and client communication were exemplary throughout.</p>
+          <div class="test-author">
+            <div class="ta-avatar">MD</div>
+            <div>
+              <span class="ta-name">Managing Director</span>
+              <span class="ta-company">Infrastructure Conglomerate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="test-controls">
+        <button class="test-btn" id="testPrev" aria-label="Previous">←</button>
+        <div class="test-dots" id="testDots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="test-btn" id="testNext" aria-label="Next">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFFICES MAP ===== -->
+  <section class="offices">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Where We Are</div>
+        <h2 class="section-title">Our Offices <em>Across India</em></h2>
+      </div>
+      <div class="offices-grid">
+        <div class="office-card reveal" data-city="New Delhi">
+          <div class="oc-dot pulse-dot"></div>
+          <h4>New Delhi</h4>
+          <p>Headquarters<br />Connaught Place, New Delhi</p>
+          <a href="#contact" class="oc-link">Get Directions →</a>
+        </div>
+        <div class="office-card reveal" data-city="Mumbai">
+          <div class="oc-dot pulse-dot"></div>
+          <h4>Mumbai</h4>
+          <p>West India Hub<br />Nariman Point, Mumbai</p>
+          <a href="#contact" class="oc-link">Get Directions →</a>
+        </div>
+        <div class="office-card reveal" data-city="Bengaluru">
+          <div class="oc-dot pulse-dot"></div>
+          <h4>Bengaluru</h4>
+          <p>Tech Capital<br />UB City, Bengaluru</p>
+          <a href="#contact" class="oc-link">Get Directions →</a>
+        </div>
+        <div class="office-card reveal" data-city="Hyderabad">
+          <div class="oc-dot pulse-dot"></div>
+          <h4>Hyderabad</h4>
+          <p>South India Hub<br />HITEC City, Hyderabad</p>
+          <a href="#contact" class="oc-link">Get Directions →</a>
+        </div>
+        <div class="office-card reveal" data-city="Chennai">
+          <div class="oc-dot pulse-dot"></div>
+          <h4>Chennai</h4>
+          <p>East Coast Office<br />Anna Salai, Chennai</p>
+          <a href="#contact" class="oc-link">Get Directions →</a>
+        </div>
+        <div class="office-card reveal" data-city="Kolkata">
+          <div class="oc-dot pulse-dot"></div>
+          <h4>Kolkata</h4>
+          <p>East India Office<br />Park Street, Kolkata</p>
+          <a href="#contact" class="oc-link">Get Directions →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-tag">Get In Touch</div>
+          <h2 class="section-title">Let's Discuss Your <em>Legal Needs</em></h2>
+          <p class="contact-desc">Our team is ready to provide expert legal counsel tailored to your specific needs.
+            Reach out to schedule a consultation.</p>
+          <div class="contact-info">
+            <div class="ci-item">
+              <div class="ci-icon">📧</div>
+              <div><strong>Email</strong><br /><a href="mailto:meu@jsam.jsalaw.com">meu@jsam.jsalaw.com</a></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon">📞</div>
+              <div><strong>Phone</strong><br /><a href="tel:+919171371370">+91 9171 371 370</a></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon">📍</div>
+              <div><strong>Headquarters</strong><br />Connaught Place, New Delhi 110001</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right reveal">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Doe" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Practice Area</label>
+              <select id="subject">
+                <option value="">Select a Practice Area</option>
+                <option>Corporate &amp; M&amp;A</option>
+                <option>Litigation &amp; Dispute Resolution</option>
+                <option>Banking &amp; Finance</option>
+                <option>Infrastructure &amp; Projects</option>
+                <option>Technology &amp; TMT</option>
+                <option>Regulatory &amp; Compliance</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" rows="4" placeholder="Briefly describe your legal matter..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width magnetic" id="submitBtn">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-text">JSA</span>
+            <span class="logo-sub">LAW</span>
+          </div>
+          <p>India's premier full-service law firm, delivering legal excellence since 1991.</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn" class="social-btn">in</a>
+            <a href="#" aria-label="Twitter/X" class="social-btn">𝕏</a>
+            <a href="#" aria-label="YouTube" class="social-btn">▶</a>
+            <a href="#" aria-label="Facebook" class="social-btn">f</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="fl-col">
+            <h5>Firm</h5>
+            <a href="#about">About Us</a>
+            <a href="#people">Our People</a>
+            <a href="#contact">Careers</a>
+            <a href="#contact">Awards</a>
+          </div>
+          <div class="fl-col">
+            <h5>Practice</h5>
+            <a href="#practice">Corporate Law</a>
+            <a href="#practice">Litigation</a>
+            <a href="#practice">Banking &amp; Finance</a>
+            <a href="#practice">Infrastructure</a>
+          </div>
+          <div class="fl-col">
+            <h5>Knowledge</h5>
+            <a href="#insights">Thought Leadership</a>
+            <a href="#insights">Publications</a>
+            <a href="#insights">Deal Updates</a>
+            <a href="#insights">Legal News</a>
+          </div>
+          <div class="fl-col">
+            <h5>Offices</h5>
+            <a href="#contact">New Delhi</a>
+            <a href="#contact">Mumbai</a>
+            <a href="#contact">Bengaluru</a>
+            <a href="#contact">Chennai</a>
+            <a href="#contact">Hyderabad</a>
+            <a href="#contact">Kolkata</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 JSA Advocates &amp; Solicitors. All rights reserved.</p>
+        <div class="fb-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#home" class="back-top" id="backTop" aria-label="Back to top">↑</a>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
