@@ -3,15 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Git Website</title>
+    <title>JSA & Co. | Premium Legal Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #e0f7fa; }
-        h1 { color: #333; }
+        :root {
+            --primary-navy: #1a2942;
+            --accent-gold: #c5a059;
+            --bg-light: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: #d1d5db;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 40px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-navy);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-gold);
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <h2>New Updates Available</h2>
-    <p>This is version 3 of our site. We now have a light blue background!</p>
+
+    <header>
+        <h1>JSA & Co. Legal Advocates</h1>
+        <p>Excellence, Integrity, and Devotion to the Law</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Our Practice Areas</h2>
+        
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-icon">🏢</div>
+                <h3 class="card-title">Corporate Law</h3>
+                <p class="card-text">Expert guidance on mergers and acquisitions, corporate governance, and complex business restructuring.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-icon">⚖️</div>
+                <h3 class="card-title">Dispute Resolution</h3>
+                <p class="card-text">Strategic representation in high-stakes commercial litigation, domestic and international arbitration.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3 class="card-title">Intellectual Property</h3>
+                <p class="card-text">Protecting your brand’s innovations through rigorous patents, trademarks, and copyright enforcement.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
