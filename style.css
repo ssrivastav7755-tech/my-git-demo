@@ -2,13 +2,10 @@
    MODERN JSA LAW — style.css
    ============================== */
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: none;
 }
 
 :root {
@@ -131,6 +128,7 @@ img {
 
 /* ==== CUSTOM CURSOR ==== */
 .cursor {
+  display: none;
   width: 8px;
   height: 8px;
   background: var(--white);
@@ -144,6 +142,7 @@ img {
 }
 
 .cursor-trail {
+  display: none;
   width: 40px;
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -365,6 +364,7 @@ section {
   z-index: 10;
   display: flex;
   align-items: center;
+  margin-top: 80px;
 }
 
 .marquee-track {
