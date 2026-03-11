@@ -364,7 +364,6 @@ section {
   z-index: 10;
   display: flex;
   align-items: center;
-  margin-top: 80px;
 }
 
 .marquee-track {

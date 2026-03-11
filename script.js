@@ -27,49 +27,6 @@ window.addEventListener('load', () => {
   }, 40);
 });
 
-/* --- CUSTOM CURSOR --- */
-const cursor = document.getElementById('cursor');
-const cursorTrail = document.getElementById('cursorTrail');
-
-if (window.matchMedia("(pointer: fine)").matches) {
-  let mouseX = 0, mouseY = 0;
-  let trailX = 0, trailY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = `${mouseX}px`;
-    cursor.style.top = `${mouseY}px`;
-  });
-
-  const animateTrail = () => {
-    const dx = mouseX - trailX;
-    const dy = mouseY - trailY;
-    trailX += dx * 0.15;
-    trailY += dy * 0.15;
-    cursorTrail.style.left = `${trailX}px`;
-    cursorTrail.style.top = `${trailY}px`;
-    requestAnimationFrame(animateTrail);
-  };
-  animateTrail();
-
-  // Hover states
-  document.querySelectorAll('a, button, .tilt-card').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.classList.add('hovered');
-      cursorTrail.classList.add('hovered');
-      if (el.classList.contains('btn')) {
-        cursor.classList.add('hovered-btn');
-        cursorTrail.classList.add('hovered-btn');
-      }
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hovered', 'hovered-btn');
-      cursorTrail.classList.remove('hovered', 'hovered-btn');
-    });
-  });
-}
-
 /* --- SCROLL PROGRESS --- */
 const scrollProgress = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
